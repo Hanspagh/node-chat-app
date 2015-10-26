@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Chat</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/app.css">
+  </head>
+
+  <body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Hans Chat</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav pull-right">
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+        <!-- Begin page content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+        <div id="userdiv">
+          <p> Online users: </p>
+          <ul class="list-group" id='userlist'>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-9">
+          <p> Chat: </p>
+        <div id="messages" class="container"></div>
+        </div>
+      </div>
+    </div>
+
+<div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2">
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input id="username" type="text" disabled="disabled" class="form-control" placeholder="Anon">
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input id="input" type="text" class="form-control" autofocus="true" placeholder="Your message!">
+          <span class="input-group-btn">
+            <button id="send" class="btn btn-default" type="button">Send!</button>
+          </span>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+  </div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Please choose a username</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+        <div class="col-lg-4">
+          <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input id="chooseName" type="text"class="form-control" placeholder="Anon">
+            <span class="input-group-btn">
+              <button id="submitName" class="btn btn-default" type="button" data-dismiss="modal">Go!</button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <script src="http://caja.appspot.com/html-css-sanitizer-minified.js"></script>
+
+	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src='/js/autolink.js'></script>
+  <script src="/js/app.js"></script>
+
+
+  </body>
+</html>
